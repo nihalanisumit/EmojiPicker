@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useInput from '../../hooks/useInputs';
 import { Icon } from 'semantic-ui-react';
-import SearchData from '../../data/search';
+import EmojiNameArray from '../../data/search';
 
 const SearchTab = () => {
-  const data = SearchData();
   const { value, bind } = useInput('');
-
+  useEffect(()=>{
+    const filteredEmojis = EmojiNameArray.filter((emoji) => emoji.name.includes(value))
+    console.log(filteredEmojis);
+    console.log('EMOJI COUNT', filteredEmojis.length)
+  },[value])
   const handleSearchClick = (e) => {
     e.preventDefault();
-    console.log(data)
-    console.log(Object.keys(data).filter(obj => obj.includes(value)))
+    // const filteredEmojis = EmojiNameArray.filter((emoji) => emoji.name.includes(value))
+    // console.log(filteredEmojis);
+    // console.log('EMOJI COUNT', filteredEmojis.length)
+   
   };
   return (
     <div>
