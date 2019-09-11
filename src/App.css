@@ -7,8 +7,22 @@
 
 .emoji-displayer {
   font-size: 128px;
+  padding: 80px;
 }
 
 .emoji-button {
+  padding: 20px;
+}
 
+.category-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+.single-emoji{
+  font-size: 20px;
+  padding: 5px;
+  line-height: 25px;
 }
