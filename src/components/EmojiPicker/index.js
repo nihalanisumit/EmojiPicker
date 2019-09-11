@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Tab } from 'semantic-ui-react';
-import { emojis, categories } from '../../data/emojis';
+import { emojis } from '../../data/emojis';
 import CategoryTab from './CategoryTab';
 
 const panes = Object.values(emojis).map(categoryEmojis => ({
@@ -19,4 +18,6 @@ class EmojiPicker extends Component {
   }
 }
 
-export default connect()(EmojiPicker);
+
+
+export default EmojiPicker;

@@ -1,11 +1,20 @@
 import React from 'react'
+import {connect} from 'react-redux';
+import {setEmoji} from '../../redux/actions';
 
-const EmojiView = ({ emoji }) => {
+const EmojiView = ({ emoji, setEmo }) => {
     return (
-      <div className="single-emoji">
+      <div className="single-emoji" onClick={() => setEmo(emoji)}>
           {emoji}
       </div>
     );
   };
 
-export default EmojiView
+  const mapDispatchToProps = dispatch => ({
+    setEmo: (emoji) => dispatch(setEmoji(emoji))
+  });
+
+  export default connect(
+    null,
+    mapDispatchToProps,
+  )(EmojiView);

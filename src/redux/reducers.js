@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
 import { SET_EMOJI } from './actions';
 
-let emojiReducer = (state = {}, action) => {
+const initialState = {
+    setEmoji: '😀'
+}
+let emojiReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_EMOJI :
             return { ...state,
