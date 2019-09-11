@@ -17,13 +17,13 @@ class EmojiButton extends Component {
     return (
       <TetherComponent
         attachment='top center'
+        offset='-10px 0px'
         constraints={[
           {
             to: 'scrollParent',
             attachment: 'together',
           },
         ]}
-        /* renderTarget: This is what the item will be tethered to, make sure to attach the ref */
         renderTarget={ref => (
           <button
             ref={ref}
@@ -34,7 +34,6 @@ class EmojiButton extends Component {
             {isOpen? 'Close Emojis': 'Open Emojis'}
           </button>
         )}
-        /* renderElement: If present, this item will be tethered to the the component returned by renderTarget */
         renderElement={ref =>
           isOpen && (
             <div ref={ref}>

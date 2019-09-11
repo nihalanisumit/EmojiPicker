@@ -15,8 +15,9 @@
 }
 .emoji-picker{
   border: 1px solid black;
-  width: 400px;
-  /* overflow-y: hidden */
+  width: 450px;
+  max-height: 450px;
+  overflow-y: hidden
 }
 
 .category-container{
@@ -25,6 +26,7 @@
   flex-wrap: wrap;
   padding: 10px;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 350px;
 }
 

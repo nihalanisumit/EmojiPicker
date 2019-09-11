@@ -7,7 +7,7 @@ const EmojiView = ({ emoji, setEmo }) => {
     return (
       <div className="single-emoji" onClick={() => setEmo(emoji)}>
           {emoji}
-          <div class="tooltiptext">{UnicodeMapper(emoji)}</div>
+          <div className="tooltiptext">{UnicodeMapper(emoji)}</div>
       </div>
     );
   };
