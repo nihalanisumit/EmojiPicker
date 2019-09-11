@@ -1,12 +1,13 @@
 import React from 'react'
 import EmojiView from './EmojiView';
+import {Segment} from 'semantic-ui-react';
 
 const CategoryTab = ({ categoryEmojis }) => {
 
     return (
-      <div className="category-container">
-        { categoryEmojis.map(emoji => <EmojiView emoji={emoji} />)}
-      </div>
+      <Segment basic className="category-container">
+        { categoryEmojis.map(emoji => <EmojiView emoji={emoji} key={emoji} />)}
+      </Segment>
     );
   };
 
