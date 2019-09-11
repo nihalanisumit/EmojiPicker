@@ -13,16 +13,26 @@
 .emoji-button {
   padding: 20px;
 }
+.emoji-picker{
+  border: 1px solid black;
+  width: 400px;
+}
 
 .category-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 10px 20px;
+  padding: 10px;
+  overflow-y: scroll;
+  height: 300px;
 }
 
 .single-emoji{
   font-size: 20px;
   padding: 5px;
   line-height: 25px;
+}
+.single-emoji:hover{
+  cursor: pointer;
+  background: #f3f3f3
 }

@@ -1,16 +1,52 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import TetherComponent from 'react-tether';
+import EmojiPicker from '../components/EmojiPicker';
 
 class EmojiButton extends Component {
-    render() {
-        return (
-            <div className="emoji-button">
-                    <button type="button">
-                        CLICK ME
-                    </button>
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+
+    return (
+      <TetherComponent
+        attachment='top center'
+        constraints={[
+          {
+            to: 'scrollParent',
+            attachment: 'together',
+          },
+        ]}
+        /* renderTarget: This is what the item will be tethered to, make sure to attach the ref */
+        renderTarget={ref => (
+          <button
+            ref={ref}
+            onClick={() => {
+              this.setState({ isOpen: !isOpen });
+            }}
+          >
+            {isOpen? 'Close Emojis': 'Open Emojis'}
+          </button>
+        )}
+        /* renderElement: If present, this item will be tethered to the the component returned by renderTarget */
+        renderElement={ref =>
+          isOpen && (
+            <div ref={ref}>
+                <EmojiPicker />
             </div>
-        )
-    }
+          )
+        }
+        
+      />
+    );
+  }
 }
+
 
 export default connect()(EmojiButton);
