@@ -16,6 +16,7 @@
 .emoji-picker{
   border: 1px solid black;
   width: 400px;
+  /* overflow-y: hidden */
 }
 
 .category-container{
@@ -24,7 +25,7 @@
   flex-wrap: wrap;
   padding: 10px;
   overflow-y: scroll;
-  height: 300px;
+  height: 350px;
 }
 
 .single-emoji{
@@ -32,7 +33,32 @@
   padding: 5px;
   line-height: 25px;
 }
+.single-emoji .tooltiptext{
+  visibility: hidden;
+  /* width: 120px; */
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+}
+.single-emoji .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 10%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
 .single-emoji:hover{
   cursor: pointer;
   background: #f3f3f3
+}
+
+.single-emoji:hover .tooltiptext{
+  visibility: visible;
 }

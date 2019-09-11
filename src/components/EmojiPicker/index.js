@@ -11,7 +11,7 @@ const panes = Object.values(emojis).map(categoryEmojis => ({
 class EmojiPicker extends Component {
   render() {
     return (
-      <div>
+      <div className="emoji-picker">
         <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
       </div>
     );
